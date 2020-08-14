@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.TreatFlavor
+@using PierresTreats.Models;
+
+<h4>Remove Flavor</h4>
+<h4>@Html.Label($"{ViewBag.Flavor.TechnicianName} - {ViewBag.Treat.TreatName}")</h4>
+
+@using (@Html.BeginForm())
+{
+  <h5>Confirm Flavor Removal</h5>
+  <input type="submit" value="Confirm" class="btn btn-outline-dark" />
+}

@@ -1,0 +1,34 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat
+
+<h4 class="view-title">Treat Details</h4>
+<h4 class="view-title">@Html.Label($"{Model.TreatName}")</h4>
+
+@if (User.Identity.IsAuthenticated)
+{
+  @Html.ActionLink("Edit Treat Details", "Edit", new { id = Model.TreatId })
+  @Html.ActionLink("Remove Treat", "Delete", new { id = Model.TreatId })
+  @Html.ActionLink("Add Flavor", "AddFlavor", new { id = Model.TreatId })
+}
+
+<h5>Flavors</h5>
+<hr />
+@if (@Model.Flavors.Count == 0)
+{
+  <h5>No Flavors</h5>
+} 
+else
+{
+  @foreach(var join in Model.Flavors)
+  {
+    <h5>@Html.ActionLink($"{join.Flavor.FlavorName}", "Details", "Flavors", new { id = join.Flavor.FlavorId })</h5>
+    @if (User.Identity.IsAuthenticated)
+    {
+      <h7>@Html.ActionLink("Remove Flavor", "DeleteFlavor", new { id = join.FlavorId })</h7>
+    }
+    <hr />
+  }
+}

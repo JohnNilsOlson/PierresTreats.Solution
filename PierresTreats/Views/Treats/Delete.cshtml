@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat
+
+<h4>@Html.Label($"{Model.TreatName}")</h4>
+<h4>Remove Treat</h4>
+
+@using (@Html.BeginForm())
+{
+  <h5>Confirm Treat Removal</h5>
+  <input type="submit" value="Confirm" class="btn btn-outline-dark" />
+}
