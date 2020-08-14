@@ -1,27 +1,44 @@
 <div id="header">
   <div class="nav">
-  <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="#">Pierre's Treats</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/Technicians">Treats</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="/Machines">Flavors</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="/Accounts/Register">Register an Account</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="/Accounts/Login">Log In</a>
-      </li>
-    </ul>
+    <nav class="navbar navbar-expand-lg navbar-light">
+    <h3 class="navbar-brand">Pierre's Treats</h3>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="site">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Technicians">Treats</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Machines">Flavors</a>
+        </li>
+        @if (User.Identity.IsAuthenticated)
+        {
+          <li class="nav-item">
+            <h3 class="navbar-brand">Welcome @User.Identity.Name</h3>
+          </li>
+          <li class="nav-item">
+            <form action="accounts/logoff" method="post">
+              <button type="submit" class="btn btn-outline-dark">Log Out</button>
+            </form>
+          </li>
+        }
+        else
+        {
+        <li class="nav-item">
+          <form action="accounts/register" method="get">
+            <button type="submit" class="btn btn-outline-dark">Register</button>
+          </form>
+        </li>
+        <li class="nav-item">
+          <form action="accounts/login" method="get">
+            <button type="submit" class="btn btn-outline-dark">Log In</button>
+          </form>
+        </li>
+        }
+      </ul>
+    </div>
   </div>
 </div>
