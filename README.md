@@ -12,28 +12,38 @@ JohnNils Olson
 A webapp for .
 
 ## _Behavior Specifications_
+### If User is not Registered and Logged In ###
+
 | Behavior | Input | Output |
 | ---- | ---- | ---- |
 | Program Directs to Splash Page | Project URL | List of All Treats and Flavors |
-| Program Directs to List of Treats, Retrieved from Database | Link -> "See all Treats" | Redirect -> Treats - Index |
+| Program Directs to Treat Details | Link -> "Treat Details" | Redirect -> Treats - Details |
+| Program Directs to Flavor Details | Link -> "Flavor Details" | Redirect -> Flavors - Details |
+| Program Directs to Accounts | Link -> "Account" | Redirect -> Accounts - Index |
+| Program Directs to Register | Link -> "Register" | Redirect -> Accounts - Register |
+| User Inputs User Account Info, User Account Added to Database | Submit | Redirect - Accounts - Login |
+| User Inputs Login Credentials | Submit | Redirect -> Home - Index |  
+  
+### If User is Registered and Logged In ###
+
+| Behavior | Input | Output |
+| ---- | ---- | ---- |
 | Program Directs to Add New Treat | Link -> "Add New Treat" | Redirect -> Treats - Create | 
 | User Inputs New Treat Info, Treat Added to Database | Submit | Redirect -> Treats - Index |
-| Program Directs to Treat Details | Link -> "Treat Details" | Redirect -> Treats - Details |
 | Program Directs to Remove Treat | Link -> "Remove Treat" | Redirect -> Treats - Delete
 | User Removes Treat, Treat Removed from Database | Submit | Redirect -> Treats - Index |
 | Program Directs to Treat Edit | Link -> "Edit Treat Details" | Redirect -> Treats - Edit |
 | User Edits Treat Details, Treat Details Changes Saved to Database | Submit | Redirect -> Treats - Details |
 | Program Directs to Add New Flavor  | Link -> "Add New Flavor" | Redirect -> Flavors - Create |
 | User Inputs New Flavor Info, Flavor Added to Database | Submit | Redirect -> Treats - Details |
-| Program Directs to Flavor Details | Link -> "Flavor Details" | Redirect -> Flavors - Details |
 | Program Directs to Remove Flavor | Link -> "Remove Flavor" | Redirect -> Flavors - Delete
 | User Removes Flavor, Flavor Removed from Database | Submit | Redirect -> Treats - Details |
 | Program Directs to Flavor Edit | Link -> "Edit Flavor Details" | Redirect -> Flavor - Edit |
 | User Edits Flavor Details, Flavor Details Changes Saved to Database | Submit | Redirect -> Flavors - Details |
-| Program Directs to Add Treat Qualifications | Link -> "Add Treat Qualifications" | Redirect -> Treat - Add Qualifications |
-| User Adds Qualifications to Treat, Treat Qualifications Added to Database | Submit | Redirect -> Treat Details |
-| Program Directs to Add Flavor Qualifications | Link -> "Add Flavor Qualifications" | Redirect -> Flavor - Add Qualifications |
-| User Adds Qualifications to Flavor, Flavor Qualifications Added to Database | Submit | Redirect -> Flavor Details |
+| Program Directs to Add Treat Flavors | Link -> "Add Treat Flavors" | Redirect -> Treat - Add Flavors |
+| User Adds Flavors to Treat, Treat Flavors Added to Database | Submit | Redirect -> Treat Details |
+| Program Directs to Add Flavor Flavors | Link -> "Add Flavor Flavors" | Redirect -> Flavor - Add Flavors |
+| User Adds Flavors to Flavor, Flavor Flavors Added to Database | Submit | Redirect -> Flavor Details |
 
 ## _Technologies Used_
 C#  
