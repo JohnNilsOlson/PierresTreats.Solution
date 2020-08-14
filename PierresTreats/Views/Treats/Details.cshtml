@@ -4,12 +4,11 @@
 
 @model PierresTreats.Models.Treat
 
-<h4 class="view-title">Treat Details</h4>
-<h4 class="view-title">@Html.Label($"{Model.TreatName}")</h4>
+<h3 id="header">@Html.Label($"{Model.TreatName}")</h3>
 
-@Html.ActionLink("Edit Treat Details", "Edit", new { id = Model.TreatId })
-@Html.ActionLink("Remove Treat", "Delete", new { id = Model.TreatId })
-@Html.ActionLink("Add Flavor", "AddFlavor", new { id = Model.TreatId })
+@Html.ActionLink("Add Flavor", "AddFlavor", new { id = Model.TreatId }, new { @id="btn-link" })
+@Html.ActionLink("Edit Treat Details", "Edit", new { id = Model.TreatId }, new { @id="btn-link" })
+@Html.ActionLink("Remove Treat", "Delete", new { id = Model.TreatId }, new { @id="btn-link" })
 
 <h5>Flavors</h5>
 <hr />
@@ -24,8 +23,7 @@ else
     <h5>@Html.ActionLink($"{join.Flavor.FlavorName}", "Details", "Flavors", new { id = join.Flavor.FlavorId })</h5>
     @if (User.Identity.IsAuthenticated)
     {
-      <h7>@Html.ActionLink("Remove Flavor", "DeleteFlavor", new { id = join.FlavorId })</h7>
+      @Html.ActionLink("Remove Flavor", "DeleteFlavor", new { id = join.FlavorId }, new { @id="btn-link" })
     }
-    <hr />
   }
 }
