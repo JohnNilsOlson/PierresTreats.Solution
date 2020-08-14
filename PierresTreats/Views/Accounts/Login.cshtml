@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.ViewModels
+@model LoginViewModel
+
+<h3>Log In</h3>
+<hr />
+@using (Html.BeginForm())
+{
+  <div class="form-group">
+    @Html.LabelFor(m => m.UserName)
+    @Html.TextBoxFor(m => m.UserName, new { @class="form-control", required=true })
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(m => m.Password)
+    @Html.TextBoxFor(m =>m.Password, new { @class="form-control", @type="password", required=true })
+  </div>
+  <input class="btn btn-outline-dark" type="submit" value="Log in" />
+}
