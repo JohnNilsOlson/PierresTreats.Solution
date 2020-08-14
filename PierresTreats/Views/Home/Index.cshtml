@@ -7,22 +7,32 @@
 <h3>Pierre's Sweet and Savory Treats</h3>
 <hr />
 <div class="row">
-  <div class="col-md-2">
-  </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
     <h4 class="sub-title">Treats</h4>
-    @foreach (Treat treat in ViewBag.Treats)
+    @if (ViewBag.Treats.Count != 0)
     {
-      <h5>@Html.ActionLink($"{treat.TreatName}", "Details", "Treats", new { id = treat.TreatId })</h5>
+      @foreach (Treat treat in ViewBag.Treats)
+      {
+        <h5>@Html.ActionLink($"{treat.TreatName}", "Details", "Treats", new { id = treat.TreatId })</h5>
+      }
+    }
+    else
+    {
+      <h5>None</h5>
     }
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
     <h4 class="sub-title">Flavors</h4>
-    @foreach (Flavor flavor in ViewBag.Flavors)
+    @if (ViewBag.Flavors.Count != 0)
     {
-      <h5>@Html.ActionLink($"{flavor.FlavorName}", "Details", "Flavors", new { id = flavor.FlavorId })</h5>
+      @foreach (Flavor flavor in ViewBag.Flavors)
+      {
+        <h5>@Html.ActionLink($"{flavor.FlavorName}", "Details", "Flavors", new { id = flavor.FlavorId })</h5>
+      }
     }
-  </div>
-  <div class="col-md-2">
+    else
+    {
+      <h5>None</h5>
+    }
   </div>
 </div>
