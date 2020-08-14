@@ -20,7 +20,7 @@
             <h3 class="navbar-brand">Welcome @User.Identity.Name</h3>
           </li>
           <li class="nav-item">
-            <form action="/accounts/logoff" method="post">
+            <form action="/account/logoff" method="post">
               <button type="submit" class="btn btn-outline-dark">Log Out</button>
             </form>
           </li>
@@ -28,12 +28,12 @@
         else
         {
         <li class="nav-item">
-          <form action="/accounts/register" method="get">
+          <form action="/account/register" method="get">
             <button type="submit" class="btn btn-outline-dark">Register</button>
           </form>
         </li>
         <li class="nav-item">
-          <form action="/accounts/login" method="get">
+          <form action="/account/login" method="get">
             <button type="submit" class="btn btn-outline-dark">Log In</button>
           </form>
         </li>
