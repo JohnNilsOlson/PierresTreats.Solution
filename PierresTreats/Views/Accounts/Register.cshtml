@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.ViewModels
+@model RegisterViewModel
+<h3>Register an Account</h3>
+@using (Html.BeginForm())
+{
+  <div class="form-group">
+    @Html.LabelFor(model => model.UserName)
+    @Html.TextBoxFor(model => model.UserName, new { @class="form-control", required=true })
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(model => model.Email)
+    @Html.TextBoxFor(model => model.Email, new { @class="form-control", required=true })
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(model => model.Password)
+    @Html.TextBoxFor(model => model.Password, new { @class="form-control", required=true })
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(model => model.ConfirmPassword)
+    @Html.TextBoxFor(model => model.ConfirmPassword, new { @class="form-control", required=true })
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(model => model.FirstName)
+    @Html.TextBoxFor(model => model.FirstName, new { @class="form-control", required=true })
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(model => model.LastName)
+    @Html.TextBoxFor(model => model.LastName, new { @class="form-control", required=true })
+  </div>
+  <input class="btn btn-outline-dark" type="submit" value="Register" />
+}
