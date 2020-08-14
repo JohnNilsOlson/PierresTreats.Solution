@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.Models
+
+<h3>Pierre's Sweet and Savory Treats</h3>
+<hr />
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-4">
+    <h4 class="sub-title">Treats</h4>
+    @foreach (Treat treat in ViewBag.Treats)
+    {
+      <h5>@Html.ActionLink($"{treat.TreatName}", "Details", "Treats", new { id = treat.TreatId })</h5>
+    }
+  </div>
+  <div class="col-md-4">
+    <h4 class="sub-title">Flavors</h4>
+    @foreach (Flavor flavor in ViewBag.Flavors)
+    {
+      <h5>@Html.ActionLink($"{flavor.FlavorName}", "Details", "Flavors", new { id = flavor.FlavorId })</h5>
+    }
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>
