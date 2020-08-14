@@ -57,9 +57,6 @@ MySql Server
   2. Change the current working directory to the location where you would like to clone the repository.
   3. Type "git clone" followed by "(https://github.com/JohnNilsOlson/PierresTreats.Solution)" (without quotes) and hit enter.
   4. Open directory with code editor of choice.
-  5. In the terminal, change working directory to ./PierresTreats.
-  6. Type "dotnet restore".
-  7. Type "dotnet run".
 
 * Project Download instructions.
   1. Visit "(https://github.com/JohnNilsOlson/PierresTreats.Solution)".
@@ -67,12 +64,9 @@ MySql Server
   3. Extract zip file to directory of choice.
   4. Open project directory in code editor of choice.
 
-* Instructions to Set Up Database with MySql Workbench (Required to Run WebApp).
-  
-
-* SQL Schema Query
-
-  
+* Instructions to Set Up Database with MySql Workbench (Required to Run Web App).
+  1. In the terminal, change working directory to ./PierresTreats.
+  2. Type "dotnet ef database update" to create database schema.
 
 * Instructions to Run WebApp
   1. In the terminal, change working directory to ./PierresTreats.
