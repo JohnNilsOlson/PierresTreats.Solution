@@ -57,6 +57,7 @@ namespace PierresTreats.Controllers
       return View(thisFlavor);
     }
 
+    [HttpPost]
     public ActionResult Edit(Flavor flavor)
     {
       _db.Entry(flavor).State = EntityState.Modified;
