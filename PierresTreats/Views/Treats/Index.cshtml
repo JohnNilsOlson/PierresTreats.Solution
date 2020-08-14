@@ -19,11 +19,4 @@
   }
 </div>
 <hr />
-@if (User.Identity.IsAuthenticated)
-{
-  <h5>@Html.ActionLink("Add new Treat", "Create")</h5>
-}
-else
-{
-  <p>Register an Account or Log In to Create New Treats</p>
-}
+<h5>@Html.ActionLink("Add new Treat", "Create")</h5>

@@ -7,12 +7,9 @@
 <h4 class="view-title">Treat Details</h4>
 <h4 class="view-title">@Html.Label($"{Model.TreatName}")</h4>
 
-@if (User.Identity.IsAuthenticated)
-{
-  @Html.ActionLink("Edit Treat Details", "Edit", new { id = Model.TreatId })
-  @Html.ActionLink("Remove Treat", "Delete", new { id = Model.TreatId })
-  @Html.ActionLink("Add Flavor", "AddFlavor", new { id = Model.TreatId })
-}
+@Html.ActionLink("Edit Treat Details", "Edit", new { id = Model.TreatId })
+@Html.ActionLink("Remove Treat", "Delete", new { id = Model.TreatId })
+@Html.ActionLink("Add Flavor", "AddFlavor", new { id = Model.TreatId })
 
 <h5>Flavors</h5>
 <hr />
