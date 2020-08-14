@@ -43,12 +43,11 @@ namespace PierresTreats.Controllers
     }
 
     [HttpPost]
-    public async Task<ActionResult> Create(Treat treat)
+    public ActionResult Create(Treat treat)
     {
       _db.Treats.Add(treat);
       _db.SaveChanges();
       return RedirectToAction("Index");
-      )
     }
 
     [Authorize]
@@ -99,14 +98,15 @@ namespace PierresTreats.Controllers
         {
           return RedirectToAction("Details", new { id = treat.TreatId });
         }
-        if (FlavorId != 0)
-        {
-          _db.TreatFlavors.Add(new TreatFlavor() { FlavorId = FlavorId, TreatId = treat.TreatId });
-        }
-        _db.SaveChanges();
-        return RedirectToAction("Details", new { id = treat.TreatId });
       }
+      if (FlavorId != 0)
+      {
+        _db.TreatFlavors.Add(new TreatFlavor() { FlavorId = FlavorId, TreatId = treat.TreatId });
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = treat.TreatId });
     }
+      
 
     [Authorize]
     public ActionResult DeleteFlavor(int id)
