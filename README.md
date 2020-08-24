@@ -9,7 +9,7 @@ A practice in many-to-many database relationships and authentication with Identi
 JohnNils Olson
 
 ## _Usage_
-A webapp for .
+A webapp for users to create treats and track relationships between treats and flavors for Pierres Bakery.
 
 ## _Behavior Specifications_
 ### If User is not Registered and Logged In ###
