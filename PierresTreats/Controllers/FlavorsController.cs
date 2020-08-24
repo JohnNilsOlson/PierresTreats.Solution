@@ -110,7 +110,7 @@ namespace PierresTreats.Controllers
       
 
     [Authorize]
-    public ActionResult DeleteFlavor(int id)
+    public ActionResult DeleteTreat(int id)
     {
       var joinEntry = _db.TreatFlavors.FirstOrDefault(entry => entry.TreatFlavorId == id);
       ViewBag.Flavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == joinEntry.FlavorId);
@@ -118,8 +118,8 @@ namespace PierresTreats.Controllers
       return View(joinEntry);
     }
 
-    [HttpPost, ActionName("DeleteFlavor")]
-    public ActionResult DeleteFlavorConfirmed(int id)
+    [HttpPost, ActionName("DeleteTreat")]
+    public ActionResult DeleteTreatConfirmed(int id)
     {
       var joinEntry = _db.TreatFlavors.FirstOrDefault(entry => entry.TreatFlavorId == id);
       _db.TreatFlavors.Remove(joinEntry);

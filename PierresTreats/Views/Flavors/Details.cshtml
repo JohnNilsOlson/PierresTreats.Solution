@@ -6,7 +6,7 @@
 
 <h3 id="header">@Html.Label($"{Model.FlavorName}")</h3>
 
-@Html.ActionLink("Add Flavor", "AddFlavor", new { id = Model.FlavorId }, new { @id="btn-link" })
+@Html.ActionLink("Add Treat", "AddTreat", new { id = Model.FlavorId }, new { @id="btn-link" })
 @Html.ActionLink("Edit Flavor Details", "Edit", new { id = Model.FlavorId }, new { @id="btn-link" })
 @Html.ActionLink("Remove Flavor", "Delete", new { id = Model.FlavorId }, new { @id="btn-link" })
 
@@ -23,7 +23,7 @@ else
     <h5>@Html.ActionLink($"{join.Treat.TreatName}", "Details", "Treats", new { id = join.Treat.TreatId })</h5>
     @if (User.Identity.IsAuthenticated)
     {
-      @Html.ActionLink("Remove Treat", "DeleteTreat", new { id = join.TreatId }, new { @id="btn-link" })
+      @Html.ActionLink("Remove Treat", "DeleteTreat", new { id = join.TreatFlavorId }, new { @id="btn-link" })
     }
   }
 }

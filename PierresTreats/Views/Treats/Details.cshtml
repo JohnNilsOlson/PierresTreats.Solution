@@ -23,7 +23,7 @@ else
     <h5>@Html.ActionLink($"{join.Flavor.FlavorName}", "Details", "Flavors", new { id = join.Flavor.FlavorId })</h5>
     @if (User.Identity.IsAuthenticated)
     {
-      @Html.ActionLink("Remove Flavor", "DeleteFlavor", new { id = join.FlavorId }, new { @id="btn-link" })
+      @Html.ActionLink("Remove Flavor", "DeleteFlavor", new { id = join.TreatFlavorId }, new { @id="btn-link" })
     }
   }
 }
